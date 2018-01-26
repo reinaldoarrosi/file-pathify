@@ -2,11 +2,9 @@ let fs = require('fs-extra');
 let path = require('path');
 let transformTools = require('browserify-transform-tools');
 
-function copyFile(parentFile, file, outDir) {
-    outDir = outDir ? path.resolve(outDir) : outDir;
-
+function copyFile(parentFile, requiredFile, outDir) {
     let baseDir = path.dirname(parentFile);
-    let fullFilePath = path.resolve(baseDir, file);
+    let fullFilePath = path.resolve(baseDir, requiredFile);
     let filePath = path.relative(baseDir, fullFilePath);
     let fullFinalPath = path.join(outDir, filePath);
     let relativeFinalPath = path.relative(baseDir, fullFinalPath);
@@ -15,7 +13,7 @@ function copyFile(parentFile, file, outDir) {
         fs.copySync(fullFilePath, fullFinalPath);
     }
 
-    return relativeFinalPath;
+    return "'" + relativeFinalPath.replace(/\\/g, '/') + "'";
 }
 
 function transformFn(args, opts, callback) {
@@ -25,6 +23,7 @@ function transformFn(args, opts, callback) {
     let validFilesRegex = opts.config.test;
     let outDir = opts.config.outDir;
     let customProcess = opts.config.customProcess;
+    outDir = outDir ? path.resolve(outDir) : outDir;
     
     if (typeof(validFilesRegex) === 'string') validFilesRegex = new RegExp(validFilesRegex);
     if (!(validFilesRegex instanceof RegExp)) throw '\'test\' must be a RegExp or a string';
