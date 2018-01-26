@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Reinaldo Arrosi",
   "license": "MIT",
+  "repository": "https://github.com/reinaldoarrosi/file-pathify",
   "private": false,
   "dependencies": {
     "browserify-transform-tools": "^1.7.0",
