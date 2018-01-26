@@ -1,0 +1,13 @@
+{
+  "name": "file-pathify",
+  "version": "1.0.0",
+  "description": "Browserify transforms that changes \"var file = require('path/to/a/file.png')\" into \"var file = 'path/to/the/file/at/some/other/place/file.png'\"",
+  "main": "index.js",
+  "author": "Reinaldo Arrosi",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "browserify-transform-tools": "^1.7.0",
+    "fs-extra": "^5.0.0"
+  }
+}
