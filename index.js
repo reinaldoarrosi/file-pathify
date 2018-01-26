@@ -1,5 +1,3 @@
-import { type } from 'os';
-
 let fs = require('fs-extra');
 let path = require('path');
 let transformTools = require('browserify-transform-tools');
