@@ -1,5 +1,5 @@
 # file-pathify #
-Browserify transforms that changes \"var file = require('path/to/a/file.png')\" into \"var file = 'path/to/the/file/at/some/other/place/file.png'\"
+Browserify alternative to Webpack's 'file-loader'
 
 ## Installation ##
 `npm install file-pathify`

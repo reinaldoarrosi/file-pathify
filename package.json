@@ -1,7 +1,18 @@
 {
   "name": "file-pathify",
   "version": "1.0.0",
-  "description": "Browserify transforms that changes \"var file = require('path/to/a/file.png')\" into \"var file = 'path/to/the/file/at/some/other/place/file.png'\"",
+  "description": "Browserify alternative to Webpack's 'file-loader'",
+  "keywords": [
+    "browserify",
+    "transform",
+    "file",
+    "file-loader",
+    "webpack",
+    "url",
+    "path",
+    "copy",
+    "require"
+  ],
   "main": "index.js",
   "author": "Reinaldo Arrosi",
   "license": "MIT",
