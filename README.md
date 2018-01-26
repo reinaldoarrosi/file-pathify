@@ -1,17 +1,14 @@
-#file-pathify
-
+# file-pathify #
 Browserify transforms that changes \"var file = require('path/to/a/file.png')\" into \"var file = 'path/to/the/file/at/some/other/place/file.png'\"
 
-##Installation
-
+## Installation ##
 `npm install file-pathify`
 
 or
 
 `yarn add file-pathify`
 
-##Basic usage
-
+## Basic usage ##
 Given the sample.js file
 ```javascript
 var img1 = require('./assets/images/img1.png');
@@ -32,7 +29,7 @@ var movie1 = 'dist/assets/files/movie1.mp4';
 ```
 Also, files "assets/images/img1.png" and "assets/files/movie1.mp4" will be copied to "dist/assets/images/img1.png" and "dist/assets/files/movie1.mp4", respectively.
 
-##Options
+## Options ##
 
 | Option        | Description                                                         | Type                                                                        |
 |---------------|---------------------------------------------------------------------|-----------------------------------------------------------------------------|
@@ -40,7 +37,7 @@ Also, files "assets/images/img1.png" and "assets/files/movie1.mp4" will be copie
 | outDir        | Output directory where files will be copied.                        | string                                                                      |
 | customProcess | Function that overrides the default behavior.                       | Function(parentFile: string, requiredFile: string, outDir: string) : string |
 
-##Using "customProcess"
+## Using "customProcess" ##
 
 When "customProcess" is passed it will be used to override the default behavior of the transform. This means that YOU are responsible for copying files to the apropriate location and also for calculating and returning the final path of the file.
 
